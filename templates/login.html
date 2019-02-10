@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Integration Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+      <link href="https://getbootstrap.com/docs/3.3/examples/signin/signin.css" rel="stylesheet" media="screen">
+    <link rel="icon" href="https://getbootstrap.com/docs/3.3/favicon.ico">
+<style>
+    { margin: 0; padding: 0; }
+
+    html {
+        background: url('static/images/dwh.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+</style>
+
+  </head>
+  <body background="static/images/dwh.jpg">
+    <div class="container">
+      <br>
+      <form class="form-signin" action="" method="post">
+              <h2>Please login</h2>
+        <input type="text" class="form-control" placeholder="Username" name="username" value="{{
+          request.form.username }}">
+         <input type="password" class="form-control" placeholder="Password" name="password" value="{{
+          request.form.password }}">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <input class="btn btn-lg btn-primary btn-block" type="submit" value="Login">
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </form>
+    </div>
+  </body>
+</html>
